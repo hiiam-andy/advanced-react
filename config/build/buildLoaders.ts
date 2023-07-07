@@ -2,7 +2,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import webpack from "webpack";
 import { BuildOptions } from "./type/config";
 
-export function buildLoaders(options:BuildOptions):webpack.RuleSetRule[]{
+export function buildLoaders({isDev}:BuildOptions):webpack.RuleSetRule[]{
 
 
   //если не TS, то нужен babel-loader
@@ -16,12 +16,17 @@ export function buildLoaders(options:BuildOptions):webpack.RuleSetRule[]{
     test: /\.s[ac]ss$/i,
     use: [
       // "style-loader", //создаёт "стайл" узлы из строк ДЖС
-      options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
         loader: "css-loader",
         options: {
-          modules: true,
-        }
+          modules: {
+            auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+            localIdentName: isDev
+              ? "[path][name]__[local]--[hash:base64:5]" 
+              : "[hash:base64:8]",
+            }
+          },
       },  //переводит css в коммонДЖС
       "sass-loader", //компиллирует сасс в цсс
     ],
