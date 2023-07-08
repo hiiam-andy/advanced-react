@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkreact2023=self.webpackChunkreact2023||[]).push([[543],{543:(e,r,t)=>{t.r(r),t.d(r,{default:()=>a});var u=t(893);function a(){return(0,u.jsx)("div",{children:"AboutPage"})}}}]);
