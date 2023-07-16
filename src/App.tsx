@@ -5,12 +5,13 @@ import { Suspense } from "react";
 import "./styles/index.scss";
 
 import useTheme from "./styles/theme/useTheme";
+import { classNames } from "./helpers/classNames/ClassNames";
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={classNames("app", {}, [theme])}>
       <button onClick={toggleTheme}>Toggle</button>
       <Link to={"/"}>Главная</Link>
       <Link to={"/about"}>О нас</Link>
