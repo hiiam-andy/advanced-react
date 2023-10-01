@@ -1,2 +1,3 @@
-import { Button } from "./ui/Button";
-export {Button}
+import { Button } from './ui/Button';
+
+export { Button };

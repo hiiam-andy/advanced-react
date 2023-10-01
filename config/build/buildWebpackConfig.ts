@@ -1,13 +1,12 @@
-import webpack from 'webpack'
-import { BuildOptions } from "./type/config";
+import webpack from 'webpack';
+import { BuildOptions } from './type/config';
 import { buildLoaders } from './buildLoaders';
 import { buildPlugins } from './buildPlugins';
 import { buildResolvers } from './buildResolvers';
 import { buildDevServer } from './buildDevServer';
 
-export function buildWebpackConfig(options: BuildOptions):webpack.Configuration{
-  
-  const {paths, mode, isDev} = options
+export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
+  const { paths, mode, isDev } = options;
 
   return {
     mode,
@@ -20,7 +19,7 @@ export function buildWebpackConfig(options: BuildOptions):webpack.Configuration{
     },
     resolve: buildResolvers(options),
     output: {
-      filename: "[name].[contenthash].js",
+      filename: '[name].[contenthash].js',
       path: paths.build,
       clean: true,
     },
