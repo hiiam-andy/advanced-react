@@ -20,7 +20,7 @@ const ThemeProvider: FC = ({ children }) => {
       theme,
       setTheme,
     }),
-    [theme]
+    [theme],
   );
 
   return (

@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb'],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -12,7 +12,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
@@ -32,12 +32,13 @@ module.exports = {
     'import/extensions': 'off', // не указывать расширение при импорте
     'import/no-extraneous-dependencies': 'warn', // предупреждает добавление в файл дев зависимостей
     'no-underscore-dangle': 'off', // отключает нижние подчеркивания
-    'comma-dangle': 'off',
+    // 'comma-dangle': 'off', // плавающие запятые в объектах
     'object-curly-newline': 'off',
-    'react/button-has-type': 'off',
+    'react/button-has-type': 'off', // требование пита кнопки
     'react/jsx-wrap-multilines': 'off',
     'operator-linebreak': 'off',
     'implicit-arrow-linebreak': 'off',
+    'i18next/no-literal-string': ['error', { markupOnly: true }], // для непереведенных слов
   },
   globals: {
     __IS_DEV__: true,

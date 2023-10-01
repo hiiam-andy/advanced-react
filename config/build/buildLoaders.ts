@@ -5,7 +5,7 @@ import { BuildOptions } from './type/config';
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   const svgLoader = {
     test: /\.svg$/,
-    use: ['@svgr/webpack']
+    use: ['@svgr/webpack'],
   };
 
   const babelLoader = {
@@ -20,12 +20,12 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             'i18next-extract',
             {
               locales: ['ru', 'en'],
-              keyAsDefaultValue: true
-            }
+              keyAsDefaultValue: true,
+            },
           ],
-        ]
-      }
-    }
+        ],
+      },
+    },
   };
 
   // если не TS, то нужен babel-loader
@@ -48,7 +48,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             localIdentName: isDev
               ? '[path][name]__[local]--[hash:base64:5]'
               : '[hash:base64:8]',
-          }
+          },
         },
       }, // переводит css в коммонДЖС
       'sass-loader', // компиллирует сасс в цсс
@@ -59,9 +59,9 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
     use: [
       {
-        loader: 'file-loader'
-      }
-    ]
+        loader: 'file-loader',
+      },
+    ],
   };
 
   return [
