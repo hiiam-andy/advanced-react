@@ -40,6 +40,7 @@ module.exports = {
     'operator-linebreak': 'off',
     'implicit-arrow-linebreak': 'off',
     'i18next/no-literal-string': ['error', { markupOnly: true }], // для непереведенных слов
+    'max-len': ['error', { ignoreComments: true }], // игнорировать максимальную длину комментариев
   },
   globals: {
     __IS_DEV__: true,
