@@ -2,15 +2,35 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import webpack from "webpack";
 import { BuildOptions } from "./type/config";
 
-export function buildLoaders({isDev}:BuildOptions):webpack.RuleSetRule[]{
+export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
   const svgLoader = {
     test: /\.svg$/,
     use: ['@svgr/webpack']
-}
+  }
+
+  const babelLoader = {
+    test: /\.(ts|jsx|tsx|js)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env'],
+        "plugins": [
+          [
+            "i18next-extract",
+            {
+              locales: ['ru', 'en'],
+              keyAsDefaultValue: true
+            }
+          ],
+        ]
+      }
+    }
+  }
 
   //если не TS, то нужен babel-loader
-  const typescriptLoader =  {
+  const typescriptLoader = {
     test: /\.tsx?$/,
     use: "ts-loader",
     exclude: /node_modules/,
@@ -27,10 +47,10 @@ export function buildLoaders({isDev}:BuildOptions):webpack.RuleSetRule[]{
           modules: {
             auto: (resPath: string) => Boolean(resPath.includes('.module.')),
             localIdentName: isDev
-              ? "[path][name]__[local]--[hash:base64:5]" 
+              ? "[path][name]__[local]--[hash:base64:5]"
               : "[hash:base64:8]",
-            }
-          },
+          }
+        },
       },  //переводит css в коммонДЖС
       "sass-loader", //компиллирует сасс в цсс
     ],
@@ -39,17 +59,18 @@ export function buildLoaders({isDev}:BuildOptions):webpack.RuleSetRule[]{
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
     use: [
-        {
-            loader: 'file-loader'
-        }
+      {
+        loader: 'file-loader'
+      }
     ]
-}
+  }
 
 
   return [
-   typescriptLoader,
-   cssLoader,
-   svgLoader,
-   fileLoader
+    fileLoader,
+    svgLoader,
+    babelLoader,
+    typescriptLoader,
+    cssLoader,
   ]
 }
