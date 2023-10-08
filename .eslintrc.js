@@ -31,7 +31,7 @@ module.exports = {
     'react/function-component-definition': 'off', // чтобы использовать стрелочные функции в компонентах
     'no-shadow': 'off',
     'import/extensions': 'off', // не указывать расширение при импорте
-    'import/no-extraneous-dependencies': 'warn', // предупреждает добавление в файл дев зависимостей
+    'import/no-extraneous-dependencies': ['warn', { devDependencies: true }], // предупреждает добавление в файл дев зависимостей
     'no-underscore-dangle': 'off', // отключает нижние подчеркивания
     // 'comma-dangle': 'off', // плавающие запятые в объектах
     'object-curly-newline': 'off',
@@ -39,7 +39,13 @@ module.exports = {
     'react/jsx-wrap-multilines': 'off',
     'operator-linebreak': 'off',
     'implicit-arrow-linebreak': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true }], // для непереведенных слов
+    'i18next/no-literal-string': [
+      'error',
+      {
+        markupOnly: true, // подсвечивать непереведенные слова
+        ignoreAttribute: ['data-testid', 'to'], // игнорировать некоторые атрибуты в тегах
+      },
+    ],
     'max-len': ['error', { ignoreComments: true }], // игнорировать максимальную длину комментариев
     'comma-dangle': 'off',
   },

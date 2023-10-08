@@ -1,6 +1,4 @@
-// import { classNames } from './ClassNames';
-
-import { classNames } from './ClassNames';
+import { classNames } from './classNames';
 
 describe('classNames', () => {
   test('С одним параметром', () => {

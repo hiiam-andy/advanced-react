@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/ClassNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { ButtonHTMLAttributes, FC } from 'react';
 import styles from './Buttom.module.scss';
 
@@ -15,7 +15,6 @@ export const Button: FC<ButtonProps> = (props) => {
   const { className, children, theme, ...otherProps } = props;
   return (
     <button
-      type="button"
       className={classNames(styles.button, { [styles[theme]]: true }, [
         className,
       ])}
