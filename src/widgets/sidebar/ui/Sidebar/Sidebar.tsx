@@ -4,6 +4,7 @@ import { ThemeSwitcher } from 'shared/ui/themeSwitcher';
 import { useTranslation } from 'react-i18next';
 import { LangSwitcher } from 'shared/ui/langSwitcher/LangSwitcher';
 import styles from './Sidebar.module.scss';
+import { Button } from 'shared/ui/Button/Button';
 
 interface SidebarProps {
   className?: string;
@@ -22,10 +23,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
         className,
       ])}
     >
-      <button onClick={onToggle}>{t('Меню')}</button>
+      <Button onClick={onToggle}>{t('Меню')}</Button>
       <div className={styles.switchers}>
         <ThemeSwitcher />
-
         <LangSwitcher className={styles.lang} />
       </div>
     </div>

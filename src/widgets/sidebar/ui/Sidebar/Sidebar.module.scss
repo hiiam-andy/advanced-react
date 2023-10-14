@@ -1,13 +1,13 @@
 .sidebar {
-  height: calc(100vh - var(--navbar-heigth));
-  width:  var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+  width: var(--sidebar-width);
   background: var(--bg-inverted-color);
   position: relative;
   transition: width 0.3s;
 }
 
 .collapsed {
-  width:  var( --sidebar-width-collapsed)
+  width: var(--sidebar-width-collapsed);
 }
 
 .switchers {
@@ -18,8 +18,4 @@
   justify-content: center;
   width: 100%;
   align-items: center;
-}
-
-.lang {
-  // margin-left: 20px;
 }
