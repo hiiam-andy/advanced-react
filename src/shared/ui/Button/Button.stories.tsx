@@ -1,4 +1,6 @@
+import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
+
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Button, ThemeButton } from './Button';
 import { Theme } from 'app/providers/themeProvider';
@@ -11,7 +13,7 @@ export default {
     backgroundColor: { control: 'color' },
   },
   args: {
-    children: 'Some Text',
+    children: 'Button',
   },
 } as Meta<typeof Button>;
 

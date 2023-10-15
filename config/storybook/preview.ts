@@ -12,9 +12,7 @@ export const parameters = {
     },
   },
   decorators: [
-    ThemeDecorator(Theme.LIGHT),
     StyleDecorator,
-    RouterDecorator
   ]
 };
 

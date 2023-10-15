@@ -1,7 +1,7 @@
-import { StoryFn, Meta } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/themeProvider';
 import { AppLink, AppLinkTheme } from './AppLink';
+import { Theme } from 'app/providers/themeProvider';
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
 
 export default {
@@ -12,8 +12,8 @@ export default {
     backgroundColor: { control: 'color' },
   },
   args: {
-    children: 'Some Text',
     to: '/',
+    children: 'App Link',
   },
 } as Meta<typeof AppLink>;
 
