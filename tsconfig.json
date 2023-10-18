@@ -14,14 +14,14 @@
     "allowJs": true,
     "moduleResolution": "node",
     //чтобы работать с пакетами, которые используют коммонДЖС как с обычнми import
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     "esModuleInterop": true,
     //что бы писать не импорт * as что-то from 'откуда-то',а просто импорт 
     "allowSyntheticDefaultImports": true,
     //для абсолютного импорта
-    "baseUrl": ".",
-    "paths": {
-      "*": ["./src/*"]
-    }
   },
   "ts-node": {
     "compilerOptions": {
