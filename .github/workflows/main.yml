@@ -1,18 +1,41 @@
-name: GitHub Actions Demo
+name: linting, testing, building
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+# перед каждым пушем в маин при создании пулл реквеста
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
 jobs:
-  Explore-GitHub-Actions:
+  pipeline:
+    # операционная система
     runs-on: ubuntu-latest
+    # версия нодджс
+    strategy:
+      matrix:
+        node-version: [17.x]
+    # проверки
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      # для установки нодджс
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{matrix.node-version}}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
+      # скрипты
+      # установка нод модулей (всегда начинается с этого)
+      - name: install modules
+        run: npm install
+      # запуск сборки
+      - name: build production prodject
+        run: npm run build:prod
+      # линтер дя тайпскрипта
+      - name: linting typescript
+        run: npm run lint:ts
+      # линтер для css
+      - name: linting css
+        run: npm run lint:css
+      # запуск юнит тестов
+      - name: unit testing
+        run: npm run test:unit
