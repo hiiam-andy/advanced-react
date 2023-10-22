@@ -1,5 +1,4 @@
 name: linting, testing, building
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 # перед каждым пушем в маин при создании пулл реквеста
 on:
   push:
@@ -39,3 +38,7 @@ jobs:
       # запуск юнит тестов
       - name: unit testing
         run: npm run test:unit
+      - name: build storybook
+        run: npm run storybook:build
+      - name: screenshot testing
+        run: npm run test:ui:ci

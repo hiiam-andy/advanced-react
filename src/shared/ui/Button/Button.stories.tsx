@@ -1,9 +1,10 @@
 import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 
+// eslint-disable-next-line max-len
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Button, ThemeButton } from './Button';
 import { Theme } from 'app/providers/themeProvider';
+import { Button, ThemeButton } from './Button';
 
 export default {
   title: 'shared/Button',

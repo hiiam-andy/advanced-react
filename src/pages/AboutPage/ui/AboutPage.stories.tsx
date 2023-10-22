@@ -1,4 +1,5 @@
 import { StoryFn, Meta } from '@storybook/react';
+// eslint-disable-next-line max-len
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/themeProvider';
 import AboutPage from './AboutPage';

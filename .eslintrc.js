@@ -4,7 +4,14 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended', 'plugin:storybook/recommended', 'plugin:storybook/recommended'],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:i18next/recommended',
+    'plugin:storybook/recommended',
+    'plugin:storybook/recommended',
+    'plugin:storybook/recommended',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -46,7 +53,7 @@ module.exports = {
         ignoreAttribute: ['data-testid', 'to'], // игнорировать некоторые атрибуты в тегах
       },
     ],
-    'max-len': ['error', { ignoreComments: true }], // игнорировать максимальную длину комментариев
+    'max-len': ['error', { code: 100 }, { ignoreComments: true }], // игнорировать максимальную длину комментариев
     'comma-dangle': 'off',
   },
   globals: {
