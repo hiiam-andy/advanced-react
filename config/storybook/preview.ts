@@ -1,7 +1,5 @@
+// eslint-disable-next-line max-len
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
-import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '../../src/app/providers/themeProvider/index';
-import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -15,5 +13,3 @@ export const parameters = {
     StyleDecorator,
   ]
 };
-
-

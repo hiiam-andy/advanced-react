@@ -1,8 +1,10 @@
 import { Meta, StoryFn } from '@storybook/react';
+// eslint-disable-next-line max-len
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { AppLink, AppLinkTheme } from './AppLink';
 import { Theme } from 'app/providers/themeProvider';
+// eslint-disable-next-line max-len
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
+import { AppLink, AppLinkTheme } from './AppLink';
 
 export default {
   title: 'shared/AppLink',
