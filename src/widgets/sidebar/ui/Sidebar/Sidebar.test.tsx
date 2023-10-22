@@ -1,12 +1,17 @@
-import { render, screen } from '@testing-library/react';
-import { withTranslation } from 'react-i18next';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { Sidebar } from './Sidebar';
 
-describe('sidebar', () => {
-  test('рендер сайдбара', () => {
-    // чтобы тестировать без обязательного перевода
-    const SidebarWithTranslation = withTranslation()(Sidebar);
-    render(<SidebarWithTranslation />);
+describe('Sidebar', () => {
+  test('with only first param', () => {
+    render(<Sidebar />);
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
+  });
+
+  test('test toggle', () => {
+    render(<Sidebar />);
+    const toggleBtn = screen.getByTestId('sidebar-toggle');
+    expect(screen.getByTestId('sidebar')).toBeInTheDocument();
+    fireEvent.click(toggleBtn);
+    expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
   });
 });
