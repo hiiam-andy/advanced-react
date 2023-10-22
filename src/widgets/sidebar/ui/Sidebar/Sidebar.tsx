@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/сlassNames';
 import { ThemeSwitcher } from 'shared/ui/themeSwitcher';
 import { LangSwitcher } from 'shared/ui/langSwitcher/LangSwitcher';
 import { Button } from 'shared/ui/Button/Button';

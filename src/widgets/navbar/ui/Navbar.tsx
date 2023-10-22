@@ -1,6 +1,6 @@
 import { AppLink, AppLinkTheme } from 'shared/ui/appLink/AppLink';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/сlassNames';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
