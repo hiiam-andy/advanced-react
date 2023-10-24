@@ -1,7 +1,7 @@
 .sidebar {
   height: calc(100vh - var(--navbar-height));
   width: var(--sidebar-width);
-  background: var(--bg-inverted-color);
+  background: var(--inverted-bg-color);
   position: relative;
   transition: width 0.3s;
 }
@@ -18,4 +18,21 @@
   justify-content: center;
   width: 100%;
   align-items: center;
+}
+
+.collapseBtn {
+  position: absolute;
+  right: -32px;
+  bottom: 32px;
+}
+
+.items {
+  margin-top: 20px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  margin-bottom: 10px;
 }
