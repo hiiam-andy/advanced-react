@@ -25,10 +25,11 @@ export default {
   ],
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: [
-    'node_modules', 'src'
+    'src',
+    'node_modules',
   ],
   modulePaths: [
-    '<rootDir>src',
+    '<rootDir>',
   ],
   // The glob patterns Jest uses to detect test files
   testMatch: [
