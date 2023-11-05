@@ -1,14 +1,23 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { Sidebar } from './Sidebar';
+import { BrowserRouter } from 'react-router-dom';
+import { Sidebar } from 'widgets/sidebar';
 
-describe('Sidebar', () => {
+describe('sidebar', () => {
   test('С одним параметром', () => {
-    render(<Sidebar />);
+    render(
+      <BrowserRouter>
+        <Sidebar />
+      </BrowserRouter>
+    );
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
   });
 
   test('Тоггл', () => {
-    render(<Sidebar />);
+    render(
+      <BrowserRouter>
+        <Sidebar />
+      </BrowserRouter>
+    );
     const toggleBtn = screen.getByTestId('sidebar-toggle');
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
     fireEvent.click(toggleBtn);

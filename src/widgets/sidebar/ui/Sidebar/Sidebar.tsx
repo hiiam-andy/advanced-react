@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { classNames } from 'shared/lib/classNames/сlassNames';
 import { LangSwitcher } from 'shared/ui/langSwitcher/LangSwitcher';
 import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
@@ -6,7 +7,6 @@ import { AppLink, AppLinkTheme } from 'shared/ui/appLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/RouteConfig';
 import MainIcon from 'shared/assets/icons/main-20-20.svg';
 import AboutIcon from 'shared/assets/icons/about-20-20.svg';
-import { classNames } from 'shared/lib/classNames/сlassNames';
 import { ThemeSwitcher } from '../../../../shared/ui/themeSwitcher/index';
 import styles from './Sidebar.module.scss';
 

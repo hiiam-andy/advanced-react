@@ -1,4 +1,3 @@
-import React from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 
 // eslint-disable-next-line max-len
@@ -26,6 +25,11 @@ Primary.args = {};
 export const Clear = Template.bind({});
 Clear.args = {
   theme: ThemeButton.CLEAR,
+};
+
+export const ClearInverted = Template.bind({});
+ClearInverted.args = {
+  theme: ThemeButton.CLEAR_INVERTED,
 };
 
 export const Outline = Template.bind({});
