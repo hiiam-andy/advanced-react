@@ -59,6 +59,7 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 'off', // игнор несемантических кнопок
     'react-hooks/rules-of-hooks': 'error', // проверять правила хуков
     'react-hooks/exhaustive-deps': 'error', // проверять массив зависимостей хуков
+    'no-param-reassign': 'off', // возможность переназначать параметры функции
   },
   globals: {
     __IS_DEV__: true,
