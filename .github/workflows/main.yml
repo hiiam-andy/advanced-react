@@ -1,0 +1,52 @@
+name: linting, testing, building
+# перед каждым пушем в маин при создании пулл реквеста
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  pipeline:
+    # операционная система
+    runs-on: ubuntu-latest
+    # версия нодджс
+    strategy:
+      matrix:
+        node-version: [17.x]
+    # проверки
+    steps:
+      # для установки нодджс
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{matrix.node-version}}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
+      # скрипты
+      # установка нод модулей (всегда начинается с этого)
+      - name: install modules
+        run: npm install
+      # запуск сборки
+      - name: build production prodject
+        run: npm run build:prod
+        # чтобы продолжить другие тесты, если один упал
+        if: always()
+      # линтер для тайпскрипта
+      - name: linting typescript
+        run: npm run lint:ts
+        if: always()
+      # линтер для css
+      - name: linting css
+        run: npm run lint:css
+        if: always()
+      # запуск юнит тестов
+      - name: unit testing
+        run: npm run test:unit
+      # запуск сторибука
+      - name: build storybook
+        run: npm run storybook:build
+        if: always()
+      # запуск скриншотных тестов
+      - name: screenshot testing
+        run: npm run test:ui:ci
+        if: always()
