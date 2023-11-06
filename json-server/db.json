@@ -1,0 +1,15 @@
+{
+  "posts": [
+    { "id": 1, "title": "title", "author": "author" },
+    { "id": 2, "title": "title 2", "author": "author" },
+    { "id": 3, "title": "title 3", "author": "author" },
+    { "id": 4, "title": "title 4", "author": "author" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some text", "postId": 1 }
+  ],
+  "users": [
+    { "id": 1, "username": "admin", "password": "123" }
+  ],
+  "profile": { "name": "profile" }
+}
