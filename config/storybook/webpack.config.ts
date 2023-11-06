@@ -5,9 +5,9 @@ import { BuildPaths } from '../build/types/config';
 
 export default ({ config }: { config: webpack.Configuration }) => {
   const paths: BuildPaths = {
+    entry: '',
     build: '',
     html: '',
-    entry: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
   };
   config.resolve.modules.push(paths.src);

@@ -1,11 +1,13 @@
 /*
- * For a detailed explanation regarding each configuration property and type check, visit:
- * https://jestjs.io/docs/configuration
- */
+* For a detailed explanation regarding each configuration property and type check, visit:
+* https://jestjs.io/docs/configuration
+*/
 
 import path from 'path';
 
 export default {
+  // A set of global variables that need to be available in all test environments
+  globals: { __IS_DEV__: true },
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
   // The test environment that will be used for testing
@@ -29,7 +31,7 @@ export default {
     'node_modules',
   ],
   modulePaths: [
-    '<rootDir>',
+    '<rootDir>src',
   ],
   // The glob patterns Jest uses to detect test files
   testMatch: [
@@ -42,8 +44,6 @@ export default {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
-  // A set of global variables that need to be available in all test environments
-  globals: { __IS_DEV__: true },
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
 
