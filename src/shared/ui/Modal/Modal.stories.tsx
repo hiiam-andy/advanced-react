@@ -6,7 +6,7 @@ import { Modal } from './Modal';
 export default {
   title: 'shared/Modal',
   component: Modal,
-  decorators: [],
+  decorators: [ThemeDecorator(Theme.LIGHT)],
   argTypes: {
     backgroundColor: { control: 'color' },
   },

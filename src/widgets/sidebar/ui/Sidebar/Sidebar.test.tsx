@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { Sidebar } from 'widgets/sidebar';
+import { Sidebar } from './Sidebar';
 
 describe('sidebar', () => {
   test('С одним параметром', () => {
