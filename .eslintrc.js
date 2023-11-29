@@ -53,7 +53,7 @@ module.exports = {
         ignoreAttribute: ['data-testid', 'to'], // игнорировать некоторые атрибуты в тегах
       },
     ],
-    'max-len': ['error', { code: 100 }, { ignoreComments: true }], // игнорировать максимальную длину комментариев
+    'max-len': ['error', { code: 120, ignoreComments: true }], // игнорировать максимальную длину комментариев
     'comma-dangle': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off', // игнор несемантических кнопок
@@ -73,4 +73,4 @@ module.exports = {
       },
     },
   ],
-};
+}

@@ -85,7 +85,6 @@ export const Modal = (props: ModalProps) => {
   if (lazy && !isMounted) {
     return null;
   }
-  console.log(lazy);
   return (
     <Portal>
       <div className={classNames(styles.Modal, mods, [className])}>

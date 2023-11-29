@@ -1,7 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
+/* eslint-disable max-len */
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'shared/ui/Button/Button';
-// eslint-disable-next-line max-len
+
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { counterActions } from '../model/slice/counterSlice';
 
@@ -10,10 +11,12 @@ export const Counter = () => {
   const counterValue = useSelector(getCounterValue);
 
   const increment = () => {
-    dispatch(counterActions.increment());
+    const num = Number(prompt('число для сложения'));
+    dispatch(counterActions.increment(num));
   };
   const decrement = () => {
-    dispatch(counterActions.decrement());
+    const num = Number(prompt('число для вычитания'));
+    dispatch(counterActions.decrement(num));
   };
 
   return (
