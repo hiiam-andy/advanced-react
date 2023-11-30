@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 // eslint-disable-next-line max-len
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginActions } from '../../model/slice/loginSlice';
 import styles from './LoginForm.module.scss';
@@ -39,7 +40,8 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 
   return (
     <div className={classNames(styles.LoginForm, {}, [className])}>
-      {error && <div>{error}</div>}
+      <Text title={t('Форма авторизации')} />
+      {error && <Text text={error} theme={TextTheme.ERROR} />}
       <Input
         autofocus
         placeholder={t('Введите username')}

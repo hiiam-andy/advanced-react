@@ -2,14 +2,16 @@
   "Тестовый пример": "Test example",
   "Перевод": "Translate",
   "Язык": "English",
+  "Короткий язык": "En",
   "Страница не найдена": "Page not found",
   "Непредвиденная ошибка": "Unexpected error",
   "Обновить страницу": "Refresh the page",
   "Меню": "Menu",
   "Главная": "Main",
   "О сайте": "About us",
-  "Короткий язык":"En",
-  "Войти":"Log In",
-  "Введите username":"Enter username",
-  "Введите пароль":"Enter password"
+  "Войти": "Log In",
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Authorization form",
+  "Введите корректные логин и пароль": "Enter the correct username and password"
 }
